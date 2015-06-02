@@ -1,0 +1,45 @@
+*.pyo
+*.pyc
+
+setup/
+
+# CORTEX
+home/.config/ranger/history
+home/.cortex/seen.cache
+
+# MPD
+home/.config/mpd/pid
+home/.config/mpd/database
+home/.config/mpd/log
+home/.config/mpd/state
+home/.config/mpd/sticker.sql
+
+# VLC
+home/.config/vlc/vlcrc
+home/.config/vlc/vlc-qt-interface.conf
+
+# BITLBEE
+home/.bitlbee/motd.txt
+
+# RANGER
+home/.config/ranger/bookmarks
+home/.config/ranger/colorschemes/__init__.py
+
+# ENVARS
+home/.envars/
+
+# IRSSI
+home/.irssi/config.autosave
+home/.irssi/irclogs/
+home/.irssi/scripts/
+
+# NCMPCPP
+home/.ncmpcpp/error.log
+
+# NEWSBEUTER
+home/.newsbeuter/cache.db
+home/.newsbeuter/history.cmdline
+home/.newsbeuter/history.search
+
+# PIP
+home/.pip/pip.log

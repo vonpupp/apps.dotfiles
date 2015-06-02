@@ -1,0 +1,46 @@
+[global_config]
+  enabled_plugins = ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+[keybindings]
+[profiles]
+  [[solarized-dark]]
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_color = "#002b36"
+    show_titlebar = False
+    cursor_color = "#eee8d5"
+    background_image = None
+  [[solarized-light]]
+    palette = ""
+    background_image = None
+    cursor_color = "#002b36"
+    foreground_color = "#002b36"
+    show_titlebar = False
+    background_color = "#eee8d5"
+  [[monokai]]
+    palette = "#000000:#f92672:#6cc72c:#fe9720:#5f91ef:#9358fe:#36af90:#8c8c8c:#4c4c4c:#ff80f4:#a7e22e:#ffee99:#5fd9ef:#ae82fe:#66efd5:#c7cece"
+    background_color = "#0d0d0d"
+    allow_bold = False
+    show_titlebar = False
+    background_image = None
+  [[default]]
+    urgent_bell = True
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    show_titlebar = False
+    background_image = None
+  [[airodump]]
+  [[tomorrow-tomorrow]]
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_image = None
+    cursor_color = "#282a2e"
+    foreground_color = "#c5c8c6"
+    show_titlebar = False
+    background_color = "#1d1f21"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

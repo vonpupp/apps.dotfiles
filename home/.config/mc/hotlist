@@ -1,0 +1,2 @@
+ENTRY "rpi01-ssh" URL "/sh://pi@rpi01.flp.lan:22/data"
+ENTRY "rpi01-nfs" URL "/net/rpi01/data"

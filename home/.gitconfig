@@ -1,0 +1,41 @@
+[user]
+    name = vonpupp
+    email = vonpupp@gmail.com
+[alias]
+    pb = pull --rebase
+    s = status
+    co = commit -m
+    cmsg = commit --amend -m
+    all = add --all .
+    au = add -u
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    url =! bash -c 'git config --get remote.origin.url'
+[push]
+    default = current
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+[web]
+    browser = firefox
+[github]
+    user = vonpupp
+[color]
+    branch      = auto
+    diff        = auto
+    interactive = auto
+    status      = auto
+    ui          = auto
+[color "diff"]
+    frag       = 104
+    func       = 74
+    meta       = 137 bold
+    new        = 114
+    old        = 167
+    plain      = 240
+    whitespace = 24 24
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[credential]
+    helper = cache

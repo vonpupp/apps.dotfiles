@@ -1,0 +1,76 @@
+# mpd configs
+mpd_music_dir = "~/Music"
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_communication_mode = "notifications"
+mpd_connection_timeout = "5"
+mpd_crossfade_time = "5"
+
+
+# UI
+user_interface = "alternative"
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+autocenter_mode = "yes"
+header_visibility = "yes"
+statusbar_visibility = "yes"
+fancy_scrolling = "yes"
+colors_enabled = "yes"
+mouse_support = "yes"
+display_bitrate = "yes"
+titles_visibility = "no"
+centered_cursor = "yes"
+locked_screen_width_part = "60"
+ask_for_locked_screen_width_part = "no"
+clock_display_seconds = "yes"
+external_editor = "vim"
+use_console_editor = "yes"
+
+
+# Lyrics
+fetch_lyrics_for_current_song_in_background = "yes"
+follow_now_playing_lyrics = "yes"
+lyrics_database = "1"
+
+
+# Seeking, searching, sorting
+playlist_disable_highlight_delay = "0"
+
+song_list_format = "{$3[%l]$9} {$5%a$9} {$6%t$9} %y %n {$5%b$9}"
+
+seek_time = "1"
+incremental_seeking = "yes"
+ignore_leading_the = "yes"
+cyclic_scrolling = "yes"
+lines_scrolled = "1"
+media_library_display_date = "no"
+default_find_mode = "wrapped"
+
+
+# Visualization
+visualizer_fifo_path = "~/.config/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "1"
+visualizer_type = "spectrum" (spectrum/wave)
+visualizer_in_stereo = "yes"
+
+
+playlist_disable_highlight_delay = "5"
+message_delay_time = "4"
+
+
+colors_enabled = "yes"
+empty_tag_color = "red"
+header_window_color = "cyan"
+volume_color = "yellow"
+main_window_color = "white"
+color1 = "blue"
+color2 = "white"
+main_window_highlight_color = "blue"
+progressbar_color = "blue"
+statusbar_color = "yellow"
+alternative_ui_separator_color = "blue"
+active_column_color = "white"
+window_border_color = "green"
+active_window_border = "white"

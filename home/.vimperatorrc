@@ -1,0 +1,238 @@
+" vi:ft=vim
+
+" Editor
+" ======================================================================
+set editor="xterm -e vim"
+" autocmd LocationChange .* :set editor="xterm -e vim"
+"set editor='bash -lc \"vim -gf \$*\" vim -g'
+"autocmd LocationChange .* :set editor='bash -lc \"vim -gf \$*\" vim -g'
+"autocmd LocationChange .*jira.* :set editor='bash -lc "vim -c \"set ft=jira\" -gf \$*" vim -g'
+"autocmd LocationChange .*/issue.* :set editor='bash -lc "vim -c \"set ft=jira\" -gf \$*" vim -g'
+"autocmd LocationChange .*/wiki.* :set editor='bash -lc "vim -c \"set ft=twiki\" -gf \$*" vim -g'
+
+" Display
+" ======================================================================
+set titlestring=PuppFox
+" set gui=nomenu,nonavigation
+set gui=navigation,notabs
+" set gui=all
+set tabnumbers
+"" see http://code.google.com/p/vimperator-labs/issues/detail?id=311
+set popups=tab,resized
+
+" autocomplete with smart Firefox stuff and open tabs
+set complete=lt
+
+" only show 5 suggestions
+"set maxitems=5
+
+" keep messages around for 2 seconds
+set messagetimeout=2000
+
+" DuckDuckGo search
+set defsearch=duckduckgo
+
+" Privacy options taken from:
+" https://github.com/EvanHahn/dotfiles/blob/master/resources/vimperatorrc
+" DuckDuckGo
+set! browser.startup.homepage=https://duckduckgo.com/?kae=d&kak=-1&kad=en_US&kl=us-en&kj=443333
+set! browser.search.selectedEngine=DuckDuckGo
+set! browser.search.defaultenginename=DuckDuckGo
+set! keyword.URL=https://duckduckgo.com/?kae=d&kak=-1&kad=en_US&kl=us-en&kj=443333&q=
+set! browser.search.suggest.enabled=false
+set! browser.search.update=true
+
+" full URLs don't scare me
+set! browser.urlbar.trimURLs=false
+
+" new tab page is about:blank
+set! browser.newtab.url=about:blank
+
+" enable pipelining
+set! network.http.pipelining=true
+set! network.http.pipelining.maxrequests=64
+set! network.http.max-connections=64
+set! network.http.max-connections-per-server=64
+
+" open tabs to the right of the current
+set! browser.tabs.insertRelatedAfterCurrent=true
+set! browser.tabs.insertRelatedAfterCurrent.override=true
+
+" what to clear after shutdown?
+set! privacy.clearOnShutdown.cache=true
+set! privacy.clearOnShutdown.cookies=true
+"set! privacy.clearOnShutdown.downloads=true
+set! privacy.clearOnShutdown.formdata=true
+set! privacy.clearOnShutdown.history=true
+set! privacy.clearOnShutdown.offlineApps=true
+set! privacy.clearOnShutdown.passwords=true
+set! privacy.clearOnShutdown.sessions=true
+set! privacy.clearOnShutdown.siteSettings=true
+
+" clear cookies on close or in a day
+set! network.cookie.lifetimePolicy=2
+set! network.cookie.lifetime.days=1
+
+" sup NSA
+set! privacy.donottrackheader.enabled=true
+
+" private browsing settings
+set! browser.privatebrowsing.autostart=true
+set! browser.privatebrowsing.dont_prompt_on_enter=true
+
+" don't check if we're the default browser
+set! browser.shell.checkDefaultBrowser=false
+
+" spellcheck in <inputs> too
+set! layout.spellcheckDefault=2
+
+" custom UA for privacy
+set! general.useragent.override="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/36.0"
+
+" view that source
+set! view_source.syntax_highlight=true
+set! view_source.wrap_long_lines=true
+
+
+" Security (also see NoScript stuff below)
+" ----------------------------------------
+
+" only cookies from origins
+set! network.cookie.cookieBehavior=1
+
+" what if Google...couldn't see everything I downloaded?
+set! browser.safebrowsing.appRepURL=""
+set! browser.safebrowsing.debug=false
+set! browser.safebrowsing.downloads.enabled=false
+set! browser.safebrowsing.downloads.remote.enabled=false
+set! browser.safebrowsing.enabled=false
+set! browser.safebrowsing.gethashURL=""
+set! browser.safebrowsing.malware.enabled=false
+set! browser.safebrowsing.malware.reportURL=""
+set! browser.safebrowsing.reportErrorURL=""
+set! browser.safebrowsing.reportGenericURL=""
+set! browser.safebrowsing.reportMalwareErrorURL=""
+set! browser.safebrowsing.reportMalwareURL=""
+set! browser.safebrowsing.reportPhishURL=""
+set! browser.safebrowsing.reportURL=""
+set! browser.safebrowsing.updateURL=""
+
+" send referrer headers only to the same domain
+set! network.http.sendRefererHeader=1
+set! network.http.referer.XOriginPolicy=1
+set! network.http.referer.spoofSource=true
+set! network.http.referer.trimmingPolicy=2
+
+" Find
+" ======================================================================
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+
+" Pass keys to sites
+" ======================================================================
+autocmd LocationChange .* js modes.passAllKeys = false
+" autocmd LocationChange www\\.google\\.(co\\.jp|com)/reader js modes.passAllKeys = true
+" autocmd LocationChange mail\\.google\\.com js modes.passAllKeys = true
+" autocmd LocationChange www\\.rememberthemilk\\.com js modes.passAllKeys = true
+" autocmd LocationChange www\\.facebook\\.com js modes.passAllKeys = true
+" autocmd LocationChange 9gag\\.com js modes.passAllKeys = true
+
+" autocmd LocationChange .* :fmapc
+" autocmd LocationChange 'www\\.google\\.com/reader' :fmap! -vkey j k n p m s t v A r S N P X O gh ga gs gt gu u / ?
+" autocmd LocationChange 'www\\.google\\.com' :fmap! -vkey j k / ?
+" autocmd LocationChange 'www\\.facebook\\.com' :fmap! -vkey j k / ?
+" autocmd LocationChange '9gag\\.com' :fmap! -vkey j k / ?
+
+lazy fmaps -u='mail\.google\.com/mail' c / <Tab> j k n p o u e I x s r a # [ ] ? gi gs gt gd ga gc gg,<Home> G,<End>
+lazy fmaps -u='mail\.google\.com/mail/u/\d/.*' c / <Tab> j n k p n j p k o u e I x s r a # [ ] ? gi gs gt gd ga gc gg,<Home> G,<End> <C-CR> <CR>
+"lazy fmaps -u='www\.google\.com/reader' -events=vkeypress x,f e o j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
+"lazy fmaps -u='https?://(www\.)?digg\.com/reader' -events=vkeydown j k n p o r 1 2 J K O X A a m e s v ?
+"lazy fmaps -u='https?://(www\.)?twitter\.com' j k / . ? x,l
+"lazy fmaps -u='https?://(www\.)?twitter\.com.*' -events=vkeydown m n gf gr gc gd gp gh gm gu <C-r>,r <C-t>,t v,f
+"lazy fmaps -u='https?://(www\.)?twitter\.com.*' -events=vkeydown j k / . ? x,l
+"lazy fmaps -u='https?://(www\.)?workflowy\.com/.*' -events=keydown /,<Esc>
+"lazy fmaps -u='https?://plus\.google\.com/.*' <Left> <Right> j k n o r .,l p <Esc> ? /
+"lazy fmaps -u='https?://www\.facebook\.com' <Left> <Right> <Esc> ? /
+
+" JS code
+" ======================================================================
+" Add Mapping <C-c> copy or stop loading
+javascript <<EOF
+mappings.addUserMap([modes.NORMAL,modes.VISUAL],['<C-c>'], 'Copy selected" text or stop loading', function(){ var sel = window.content.window.getSelection().toString(); if (sel){ copyToClipboard(sel,true); } else { BrowserStop(); echo('Stopped Loading !'); } });
+EOF
+
+" qmarks
+" ======================================================================
+qmark n https://172.16.226.1
+qmark r http://rs
+qmark w http://ng:8888
+qmark d https://nas
+
+qmark m https://mail.google.com/
+qmark c https://www.google.com/calendar/
+qmark f https://facebook.com
+qmark h http://www.github.com
+qmark b http://www.bitbucket.org
+
+
+" Remaps
+" ======================================================================
+nnoremap j 3j
+nnoremap k 3k
+nnoremap B :back<CR>
+nnoremap F :forward<CR>
+nnoremap h :tabprevious<CR>
+nnoremap l :tabnext<CR>
+nnoremap d :tabclose!<CR>
+
+" Press 'F10' to toggle Vimperator
+" noremap <F10> :vimperatortoggle<CR>
+" This is done via Shift+ESC
+
+" Press 'b' to page up, instead of crazy CTRL-B
+" noremap b <PageUp>
+
+" Press 'C-a' to select all
+noremap <C-a> <C-v><C-a>
+
+" Press 'C-c' to copy, 'C-v' or 'S-Insert' to paste, or 'C-x' to cut
+noremap <C-c> <C-v><C-c>
+noremap <C-v> <C-v><C-v>
+noremap <C-x> <C-v><C-x>
+" cnoremap <C-c> <C-v><C-c>
+" cnoremap <C-v> <C-v><C-v>
+" cnoremap <S-Insert> <C-v><C-v>
+" cnoremap <C-x> <C-v><C-x>
+" inoremap <C-c> <C-v><C-c>
+" inoremap <C-v> <C-v><C-v>
+" inoremap <S-Insert> <C-v><C-v>
+" inoremap <C-x> <C-v><C-x>
+
+
+let mapleader = ","
+
+" Firebug
+"map <Leader>f :firebug toggle<CR>
+map <Leader>f <F12>
+
+" NoScript
+" - Toggles scripts temporarily on current page.
+map <Leader>n :noscript toggletemp<CR>
+
+" -Toggles scripts permanently on current page.
+map <Leader>p :noscript toggleperm<CR>
+
+" Remember last open tabs
+set! browser.startup.page=3
+
+" Don't auto hide tab in fullscreen. finally!
+set! browser.fullscreen.autohide=false
+
+" google translate plugin
+" :tr[anslate] [-l[angpair from|to] word or phrase
+let g:translate_langpair="en|de"
+
+loadplugins
