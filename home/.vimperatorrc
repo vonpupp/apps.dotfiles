@@ -2,7 +2,7 @@
 
 " Editor
 " ======================================================================
-set editor="xterm -e vim"
+set editor="urxvt -e vim"
 " autocmd LocationChange .* :set editor="xterm -e vim"
 "set editor='bash -lc \"vim -gf \$*\" vim -g'
 "autocmd LocationChange .* :set editor='bash -lc \"vim -gf \$*\" vim -g'
@@ -21,7 +21,7 @@ set tabnumbers
 set popups=tab,resized
 
 " autocomplete with smart Firefox stuff and open tabs
-set complete=lt
+set complete=sltb
 
 " only show 5 suggestions
 "set maxitems=5
