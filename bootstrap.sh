@@ -5,6 +5,9 @@ source $DIRNAME/.vars
 source ~/.homesick/repos/homeshick/homeshick.sh
 homeshick link $REPO_NAME
 
+# DOWNLOADS
+ln -s ~/Downloads ~/downloads
+
 # PIP (ROOT)
 sudo pip install \
     envdir \
@@ -37,3 +40,28 @@ wget -c https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh
 chmod +x gitflow-installer.sh
 INSTALL_PREFIX=~/bin ./gitflow-installer.sh
 rm gitflow-installer.sh
+
+# VLSUB
+mkdir -p ~/.local/share/vlc/lua/extensions/
+wget https://raw.githubusercontent.com/exebetche/vlsub/master/vlsub.lua -O ~/.local/share/vlc/lua/extensions/vlsub.lua
+
+# CORTEX
+#wget https://raw.githubusercontent.com/GGLucas/cortex/master/cortex -O ~/bin/cortex
+#chmod 755 ~/bin/cortex
+
+# RTORRENT
+mkdir -p ~/Downloads/torrents/.rtorrent/session
+mkdir -p ~/Downloads/torrents/torrent-files
+
+
+# FIREFOX
+#wget -P ~/Downloads https://addons.mozilla.org/firefox/downloads/file/243918/vimperator-3.8.2-fx.xpi
+#wget -P ~/Downloads https://download.zotero.org/extension/zotero-4.0.22.xpi
+#wget -P ~/Downloads https://zotplus.github.io/better-bibtex/zotero-better-bibtex-0.6.50.xpi
+#wget -P ~/Downloads https://download.xmarks.com/download/binary/firefox
+#mv ~/Downloads/firefox ~/Downloads/xmarks.xpi
+
+#firefox -install-global-extension ~/Downloads/vimperator-3.8.2-fx.xpi
+#firefox -install-global-extension ~/Downloads/zotero-4.0.22.xpi
+#firefox -install-global-extension ~/Downloads/zotero-better-bibtex-0.6.50.xpi
+#firefox -install-global-extension ~/Downloads/xmarks.xpi
