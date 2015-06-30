@@ -51,8 +51,9 @@ wget https://raw.githubusercontent.com/exebetche/vlsub/master/vlsub.lua -O ~/.lo
 
 # RTORRENT
 mkdir -p ~/Downloads/torrents/.rtorrent/session
-mkdir -p ~/Downloads/torrents/torrent-files
-
+mkdir -p ~/Downloads/torrents/watch
+mkdir -p ~/Downloads/torrents/incomplete
+mkdir -p ~/Downloads/torrents/complete
 
 # FIREFOX
 #wget -P ~/Downloads https://addons.mozilla.org/firefox/downloads/file/243918/vimperator-3.8.2-fx.xpi
