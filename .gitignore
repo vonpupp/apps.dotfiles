@@ -43,3 +43,6 @@ home/.newsbeuter/history.search
 
 # PIP
 home/.pip/pip.log
+
+# SSH
+home/.ssh/config
