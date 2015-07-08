@@ -44,46 +44,48 @@ XTerm*vt100.translations: #override \
 ! https://github.com/fabi1cazenave/dotFiles/blob/master/Xresources
 
 ! General
-URxvt.termName:           rxvt-unicode-256color
-urxvt*loginShell:         true
-urxvt*scrollBar:          false
-urxvt*secondaryScroll:    true
-urxvt*saveLines:          65535
-urxvt*cursorBlink:        false
-urxvt*urgentOnBell:       true
-urxvt.cutchars:           `()''*<>[]{|}""
+URxvt.termName:         rxvt-unicode-256color
+urxvt*loginShell:       true
+urxvt*scrollBar:        false
+urxvt*secondaryScroll:  true
+urxvt*saveLines:        65535
+urxvt*cursorBlink:      false
+urxvt*urgentOnBell:     true
+urxvt.cutchars:         `"'&()urxvt*,;<=>?@[]{|}$``'"`
 !urxvt*override-redirect:false
-!urxvt*borderLess:       false
-!urxvt*internalBorder:       0
-!urxvt*externalBorder:       0
+urxvt*borderLess:       false
+urxvt*internalBorder:   1
+urxvt*externalBorder:   0
 
 !urxvt*font:       xft:Terminus:8
 !URxvt*letterSpace : -2
-!URxvt*font : xft:mensch:size=9
-urxvt*font : xft:Inconsolata:size=11
+urxvt*font:             -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+urxvt*boldFont:         -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+urxvt*italicFont:       -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+urxvt*bolditalicFont:   -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
 
 ! Source: https://github.com/muennich/urxvt-perls
 urxvt*perl-ext-common: default,matcher,searchable-scrollback,clipboard,keyboard-select,url-select,font-size
 
 ! extensions -> clipboard (requires xsel)
 ! https://github.com/muennich/urxvt-perls)
-urxvt.keysym.C-C:   perl:clipboard:copy
-urxvt.keysym.C-V:   perl:clipboard:paste
-urxvt.keysym.C-M-v: perl:clipboard:paste_escaped
+urxvt.keysym.C-C:       perl:clipboard:copy
+urxvt.keysym.C-V:       perl:clipboard:paste
+urxvt.keysym.C-M-v:     perl:clipboard:paste_escaped
 urxvt.clipboard.autocopy: true
 !URxvt.clipboard.copycmd:  pbcopy
 !URxvt.clipboard.pastecmd: pbpaste
 
 ! extensions -> font-size
 ! https://github.com/majutsushi/urxvt-font-size
-urxvt.keysym.C-equal:    perl:font-size:increase
-urxvt.keysym.C-minus:    perl:font-size:decrease
-urxvt.keysym.C-S-equal:  perl:font-size:incglobal
-urxvt.keysym.C-S-minus:  perl:font-size:decglobal
+urxvt.keysym.C-equal:   perl:font-size:increase
+urxvt.keysym.C-minus:   perl:font-size:decrease
+urxvt.keysym.C-S-equal: perl:font-size:incglobal
+urxvt.keysym.C-S-minus: perl:font-size:decglobal
 
 ! extensions -> matcher: open URL with a left click
-urxvt*urlLauncher:     xdg-open
-urxvt*matcher.button:  1
+urxvt*urlLauncher:      xdg-open
+urxvt*matcher.button:   1
 
 ! url-select
 !URxvt.url-select.autocopy:  if set to true, selected URLs are automatically copied to the PRIMARY buffer
@@ -92,9 +94,9 @@ urxvt*matcher.button:  1
 !URxvt.url-select.underline: if set to true, all URLs get underlined
 
 ! keyboard-select
-urxvt.keysym.M-Escape: perl:keyboard-select:activate
-urxvt.keysym.C-S: perl:keyboard-select:search
-urxvt.keysym.C-u: perl:url-select:select_next
+urxvt.keysym.M-Escape:  perl:keyboard-select:activate
+urxvt.keysym.C-S:       perl:keyboard-select:search
+urxvt.keysym.C-u:       perl:url-select:select_next
 
 !URxvt.perl-ext-common:        default,matcher,url-select,clipboard,font-size,vim-scrollback
 !URxvt.keysym.M-Escape:        perl:vim-scrollback
