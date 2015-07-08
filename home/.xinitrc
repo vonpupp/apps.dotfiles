@@ -11,6 +11,18 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
+# XAUTOLOCK
+xautolock -time 10 -locker ~/bin/start-locker.sh &
+
+# XSCREENSAVER
+#xscreensaver-command -exit
+#xscreensaver &
+#xscreensaver -no-splash &
+
+# XRDB
+xrdb -merge ~/.Xresources
+
+# START THE WM
 case "$1" in
     openbox) exec openbox-session ;;
     fluxbox) exec startfluxbox ;;
@@ -23,5 +35,4 @@ case "$1" in
     awesome) exec awesome ;;
     dwm) exec $HOME/bin/dwm_run ;;
     wmii) exec wmii ;;
-    *) exec openbox-session ;;
 esac
