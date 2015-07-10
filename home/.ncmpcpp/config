@@ -2,7 +2,7 @@
 mpd_music_dir = "~/Music"
 mpd_host = "localhost"
 mpd_port = "6600"
-mpd_communication_mode = "notifications"
+#mpd_communication_mode = "notifications"
 mpd_connection_timeout = "5"
 mpd_crossfade_time = "5"
 
@@ -15,8 +15,8 @@ search_engine_display_mode = "columns"
 autocenter_mode = "yes"
 header_visibility = "yes"
 statusbar_visibility = "yes"
-fancy_scrolling = "yes"
-colors_enabled = "yes"
+#fancy_scrolling = "yes"
+#colors_enabled = "yes"
 mouse_support = "yes"
 display_bitrate = "yes"
 titles_visibility = "no"
@@ -31,11 +31,11 @@ use_console_editor = "yes"
 # Lyrics
 fetch_lyrics_for_current_song_in_background = "yes"
 follow_now_playing_lyrics = "yes"
-lyrics_database = "1"
+#lyrics_database = "1"
 
 
 # Seeking, searching, sorting
-playlist_disable_highlight_delay = "0"
+#playlist_disable_highlight_delay = "0"
 
 song_list_format = "{$3[%l]$9} {$5%a$9} {$6%t$9} %y %n {$5%b$9}"
 
@@ -44,7 +44,7 @@ incremental_seeking = "yes"
 ignore_leading_the = "yes"
 cyclic_scrolling = "yes"
 lines_scrolled = "1"
-media_library_display_date = "no"
+#media_library_display_date = "no"
 default_find_mode = "wrapped"
 
 
