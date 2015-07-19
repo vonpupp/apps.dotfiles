@@ -22,6 +22,10 @@ xautolock -time 10 -locker ~/bin/start-locker.sh &
 # XRDB
 xrdb -merge ~/.Xresources
 
+# ALSA
+amixer set Master unmute
+
+
 # START THE WM
 case "$1" in
     openbox) exec openbox-session ;;
