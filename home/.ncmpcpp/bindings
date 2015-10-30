@@ -1,0 +1,42 @@
+# Source: https://gist.github.com/Soft/959188#file-keys
+
+def_key "+"
+    volume_up
+
+def_key "-"
+    volume_down
+
+def_key "tab"
+    next_screen
+
+def_key "K"
+    move_selected_items_up
+
+def_key "J"
+    move_selected_items_down
+
+def_key "k"
+    scroll_up
+
+def_key "j"
+    scroll_down
+
+def_key "n"
+    next_found_item
+#key_next_found_position = 'n'
+#key_prev_found_position = 'N'
+
+def_key "l"
+    scroll_down_album
+
+def_key "h"
+    scroll_up_album
+
+def_key "."
+    show_lyrics
+
+def_key "g"
+    move_home
+
+def_key "G"
+    move_end
