@@ -153,3 +153,17 @@ peer_exchange = yes
 #done_bg_color
 #active_fg_color = 3
 #active_bg_color
+
+# Preallocate files; reduces defragmentation on filesystems
+#system.file_allocate.set = yes
+
+ratio.enable=
+ratio.min.set=0
+ratio.max.set=1
+ratio.upload.set=1b
+
+# Only display active torrents
+schedule = filter_active,30,30,"view_filter = active,\"or={d.get_up_rate=,d.get_down_rate=}\""
+
+# Enable XMLRPC interface
+#scgi_port = localhost:5000
