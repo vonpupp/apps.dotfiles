@@ -1,0 +1,79 @@
+# Source:
+# http://akeil.net/posts/music-with-mpd-and-beets.html
+# http://www.webupd8.org/2012/01/beets-command-line-tool-to-fix-music.html
+
+directory: /net/nas/audio            # The default library root directory.
+library: /net/nas/audio/library.db   # The default library database file to use.
+
+import:
+  log: beets.log
+  copy: no
+  move: yes
+  timid: no
+  resume: ask
+  incremental: yes
+  languages: en fr pt es
+
+threaded: yes
+ignore: .AppleDouble ._* *~ .DS_Store Thumbs.db
+original_date: yes
+
+ui:
+  color: yes
+
+pluginpath: ~/.config/beets/plugins
+plugins:
+  #- chroma
+  - discogs
+  - mbsync
+  - fetchart
+  - lyrics
+  #- echonest_tempo
+  - lastgenre
+  - mpdstats
+  - missing
+  #- replaygain
+  - inline
+  #- mpdupdate
+  - fuzzy
+  - info
+  - follow
+  - web
+
+match:
+  strong_rec_thresh: 0.2
+
+# fetchart
+art_filename: cover
+fetchart:
+  #auto: yes
+  cautious: true
+  cover_names: front back
+  minwith: 500
+  maxwidth: 20000
+  sources: MusicBrainz wikipedia google itunes *
+
+# inline
+item_fields:
+  source_directory: |
+    import os
+    return os.path.basename(os.path.dirname(path))
+
+paths:
+  default: $source_directory/$albumartist - $year - $album - $track - $title
+  albumtype:christian: music/christian/collection/$albumartist - $year - $album/$albumartist - $year - $album - $track - $title
+  #albumtype:Pike: $albumartist/$year - $albumdisambig - $album/$artist - $album - $track - $title
+  #comp: Various Artists/$album%aunique{}/$track $title
+  #singleton: singles/$artist - $title
+
+include: ["follow-config.yaml"]
+
+#replace:
+#  '[\\/]': _
+#  '^\.':
+#  '[\x00-\x1f]': _
+#  '\s+$': ''
+
+web:
+  host: 127.0.0.1
+  port: 8337
