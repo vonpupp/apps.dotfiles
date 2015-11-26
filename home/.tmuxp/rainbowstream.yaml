@@ -1,9 +1,0 @@
-session_name: rainbowstream
-windows:
-- window_name: RAINBOWSTREAM
-  layout: main-vertical
-  automatic_rename: true
-  panes:
-  - shell_command:
-    - rainbowstream -s mine
-    - rainbowstream
