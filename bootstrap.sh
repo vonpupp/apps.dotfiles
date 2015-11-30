@@ -40,6 +40,7 @@ wget -c https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh
 chmod +x gitflow-installer.sh
 INSTALL_PREFIX=~/bin ./gitflow-installer.sh
 rm gitflow-installer.sh
+rm -rf gitflow
 
 # VLSUB
 mkdir -p ~/.local/share/vlc/lua/extensions/
