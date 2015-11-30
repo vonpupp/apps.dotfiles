@@ -36,7 +36,7 @@ case "$1" in
     e17) exec /usr/bin/enlightenment_start ;;
     pekwm) exec /usr/bin/pekwm ;;
     ratpoison) exec ratpoison ;;
-    awesome) exec awesome ;;
+    awesome) exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr ;;
     dwm) exec $HOME/bin/dwm_run ;;
     wmii) exec wmii ;;
 esac
