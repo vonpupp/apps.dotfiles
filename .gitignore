@@ -14,10 +14,6 @@ home/.config/mpd/log
 home/.config/mpd/state
 home/.config/mpd/sticker.sql
 
-# VLC
-home/.config/vlc/vlcrc
-home/.config/vlc/vlc-qt-interface.conf
-
 # BITLBEE
 home/.bitlbee/motd.txt
 
