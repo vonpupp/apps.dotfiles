@@ -57,12 +57,7 @@ urxvt*borderLess:       false
 urxvt*internalBorder:   1
 urxvt*externalBorder:   0
 
-!urxvt*font:       xft:Terminus:8
-!URxvt*letterSpace : -2
-urxvt*font:             -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
-urxvt*boldFont:         -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
-urxvt*italicFont:       -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
-urxvt*bolditalicFont:   -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+urxvt.font: xft:Terminus:size=12
 
 ! Source: https://github.com/muennich/urxvt-perls
 urxvt*perl-ext-common: default,matcher,searchable-scrollback,clipboard,keyboard-select,url-select,font-size
