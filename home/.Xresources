@@ -82,6 +82,7 @@ urxvt.keysym.C-equal:   perl:font-size:increase
 urxvt.keysym.C-minus:   perl:font-size:decrease
 urxvt.keysym.C-S-equal: perl:font-size:incglobal
 urxvt.keysym.C-S-minus: perl:font-size:decglobal
+urxvt.font-size.step:   4
 
 ! extensions -> matcher: open URL with a left click
 urxvt*urlLauncher:      xdg-open

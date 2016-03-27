@@ -174,7 +174,7 @@ song_status_format = "{$8%a} $2»$8»$5» $b{$1%b}$/b"
 #
 song_library_format = "{%n - }{%t}|{%f}"
 #
-tag_editor_album_format = "{%a} - {%b}"
+#tag_editor_album_format = "{%a} - {%b}"
 #
 ##
 ## Note: Below variables are used for sorting songs in browser.
