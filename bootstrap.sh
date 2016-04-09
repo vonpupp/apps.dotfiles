@@ -11,6 +11,7 @@ ln -s ~/Downloads ~/downloads
 # PIP (ROOT)
 source ~/.venv/bin2/bin/activate
 pip install \
+    trash \
     envdir \
     virtualenvwrapper \
     #autoenv \
