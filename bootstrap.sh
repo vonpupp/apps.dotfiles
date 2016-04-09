@@ -34,7 +34,7 @@ sudo npm install -g gh
 #rm -rf fasd
 
 # CREATE_AP
-git clone https://github.com/oblique/create_ap.git ./bin/create_ap
+git clone https://github.com/oblique/create_ap.git $HOME/bin/create_ap
 
 # GITFLOW
 wget -c https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh
