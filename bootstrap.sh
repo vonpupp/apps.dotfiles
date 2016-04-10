@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 DIRNAME=`dirname $0`
 
 source $DIRNAME/.vars
@@ -9,10 +9,12 @@ homeshick link $REPO_NAME
 ln -s ~/Downloads ~/downloads
 
 # PIP (ROOT)
-sudo pip install \
+source ~/.venv/bin2/bin/activate
+pip install \
+    trash \
     envdir \
     virtualenvwrapper \
-    autoenv \
+    #autoenv \
     #
 
 # PIP (USER)
@@ -33,7 +35,7 @@ sudo npm install -g gh
 #rm -rf fasd
 
 # CREATE_AP
-git clone https://github.com/oblique/create_ap.git ./bin/create_ap
+git clone https://github.com/oblique/create_ap.git $HOME/bin/create_ap
 
 # GITFLOW
 wget -c https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh
