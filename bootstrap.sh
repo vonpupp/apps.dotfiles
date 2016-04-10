@@ -17,6 +17,9 @@ pip install \
     #autoenv \
     #
 
+# Autoenv
+git clone https://github.com/kennethreitz/autoenv ~/.autoenv
+
 # PIP (USER)
 #pip install --user git+git://github.com/Lokaltog/powerline
 #pip install --user pep8
