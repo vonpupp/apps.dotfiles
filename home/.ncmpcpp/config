@@ -320,7 +320,7 @@ user_interface = "classic" (classic/alternative)
 #
 default_find_mode = "wrapped" (wrapped/normal)
 #
-default_space_mode = "add" (add/select)
+#default_space_mode = "add" (add/select)
 #
 default_tag_editor_pattern = "%n - %t"
 #
