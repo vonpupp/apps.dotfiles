@@ -1,0 +1,62 @@
+!| URxvt <<<
+!|=============================================================================
+! https://github.com/fabi1cazenave/dotFiles/blob/master/Xresources
+
+! General
+URxvt.termName:         rxvt-unicode-256color
+urxvt*loginShell:       true
+urxvt*scrollBar:        false
+urxvt*secondaryScroll:  true
+urxvt*saveLines:        65535
+urxvt*cursorBlink:      false
+urxvt*urgentOnBell:     true
+urxvt.cutchars:         `"'&()urxvt*,;<=>?@[]{|}$``'"`
+!urxvt*override-redirect:false
+urxvt*borderLess:       false
+urxvt*internalBorder:   1
+urxvt*externalBorder:   0
+
+urxvt.font: xft:Terminus:size=12
+
+! Source: https://github.com/muennich/urxvt-perls
+urxvt*perl-ext-common: default,matcher,searchable-scrollback,clipboard,keyboard-select,url-select,font-size
+
+! extensions -> clipboard (requires xsel)
+! https://github.com/muennich/urxvt-perls)
+urxvt.keysym.C-C:       perl:clipboard:copy
+urxvt.keysym.C-V:       perl:clipboard:paste
+urxvt.keysym.C-M-v:     perl:clipboard:paste_escaped
+urxvt.clipboard.autocopy: true
+!URxvt.clipboard.copycmd:  pbcopy
+!URxvt.clipboard.pastecmd: pbpaste
+
+! extensions -> font-size
+! https://github.com/majutsushi/urxvt-font-size
+urxvt.keysym.C-equal:   perl:font-size:increase
+urxvt.keysym.C-minus:   perl:font-size:decrease
+urxvt.keysym.C-S-equal: perl:font-size:incglobal
+urxvt.keysym.C-S-minus: perl:font-size:decglobal
+urxvt.font-size.step:   4
+
+! extensions -> matcher: open URL with a left click
+urxvt*urlLauncher:      xdg-open
+urxvt*matcher.button:   1
+
+! url-select
+!URxvt.url-select.autocopy:  if set to true, selected URLs are automatically copied to the PRIMARY buffer
+!URxvt.url-select.button:    mouse button to click-open URLs (default: 2)
+!URxvt.url-select.launcher:  browser/command to open selected URL with
+!URxvt.url-select.underline: if set to true, all URLs get underlined
+
+! keyboard-select
+urxvt.keysym.M-Escape:  perl:keyboard-select:activate
+urxvt.keysym.C-S:       perl:keyboard-select:search
+urxvt.keysym.C-u:       perl:url-select:select_next
+
+!URxvt.perl-ext-common:        default,matcher,url-select,clipboard,font-size,vim-scrollback
+!URxvt.keysym.M-Escape:        perl:vim-scrollback
+!URxvt.url-select.underline:   true
+!URxvt.colorUL:                #86f2fe
+!URxvt.underlineColor:         #24b5f4
+
+! vim: set fdm=marker fmr=<<<,>>> fdl=0:
