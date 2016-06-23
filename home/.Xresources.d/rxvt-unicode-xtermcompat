@@ -2,8 +2,8 @@
 *URxvt*termName:		xterm-256color
 
 ! Normal
-*URxvt*keysym.Home:		\033OH
-*URxvt*keysym.End:		\033OF
+!*URxvt*keysym.Home:		\033OH
+!*URxvt*keysym.End:		\033OF
 *URxvt*keysym.F1:		\033OP
 *URxvt*keysym.F2:		\033OQ
 *URxvt*keysym.F3:		\033OR

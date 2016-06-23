@@ -33,10 +33,12 @@ urxvt.clipboard.autocopy: true
 ! extensions -> font-size
 ! https://github.com/majutsushi/urxvt-font-size
 urxvt.keysym.C-equal:   perl:font-size:increase
+urxvt.keysym.C-plus:    perl:font-size:increase
 urxvt.keysym.C-minus:   perl:font-size:decrease
 urxvt.keysym.C-S-equal: perl:font-size:incglobal
+urxvt.keysym.C-S-plus:  perl:font-size:incglobal
 urxvt.keysym.C-S-minus: perl:font-size:decglobal
-urxvt.font-size.step:   4
+urxvt.font-size.step:   2
 
 ! extensions -> matcher: open URL with a left click
 urxvt*urlLauncher:      xdg-open

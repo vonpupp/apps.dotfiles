@@ -3,3 +3,5 @@
 #include ".Xresources.d/rxvt-unicode-xtermcompat"
 ##include ".Xresources.d/fonts"
 ##include ".Xresources.d/xscreensaver"
+
+*VT100*metaSendsEscape: true
