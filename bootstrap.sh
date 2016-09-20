@@ -24,6 +24,7 @@ pip install \
     trash \
     envdir \
     virtualenvwrapper \
+    mu-repo \
     #autoenv \
     #
 
