@@ -13,8 +13,8 @@ set editor="urxvt -e vim"
 " Display
 " ======================================================================
 set titlestring=PuppFox
-" set gui=nomenu,nonavigation
-set gui=navigation,notabs
+set gui=nomenu,nonavigation,notabs
+" set gui=navigation,notabs
 " set gui=all
 set tabnumbers
 "" see http://code.google.com/p/vimperator-labs/issues/detail?id=311
@@ -146,8 +146,8 @@ autocmd LocationChange .* js modes.passAllKeys = false
 " autocmd LocationChange 'www\\.facebook\\.com' :fmap! -vkey j k / ?
 " autocmd LocationChange '9gag\\.com' :fmap! -vkey j k / ?
 
-lazy fmaps -u='mail\.google\.com/mail' c / <Tab> j k n p o u e I x s r a # [ ] ? gi gs gt gd ga gc gg,<Home> G,<End>
-lazy fmaps -u='mail\.google\.com/mail/u/\d/.*' c / <Tab> j n k p n j p k o u e I x s r a # [ ] ? gi gs gt gd ga gc gg,<Home> G,<End> <C-CR> <CR>
+" lazy fmaps -u='mail\.google\.com/mail' c / <Tab> j k n p o u e I x s r a # [ ] ? gi gs gt gd ga gc gg,<Home> G,<End>
+" lazy fmaps -u='mail\.google\.com/mail/u/\d/.*' c / <Tab> j n k p n j p k o u e I x s r a # [ ] ? gi gs gt gd ga gc gg,<Home> G,<End> <C-CR> <CR>
 "lazy fmaps -u='www\.google\.com/reader' -events=vkeypress x,f e o j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
 "lazy fmaps -u='https?://(www\.)?digg\.com/reader' -events=vkeydown j k n p o r 1 2 J K O X A a m e s v ?
 "lazy fmaps -u='https?://(www\.)?twitter\.com' j k / . ? x,l
@@ -161,22 +161,8 @@ lazy fmaps -u='mail\.google\.com/mail/u/\d/.*' c / <Tab> j n k p n j p k o u e I
 " ======================================================================
 " Add Mapping <C-c> copy or stop loading
 javascript <<EOF
-mappings.addUserMap([modes.NORMAL,modes.VISUAL],['<C-c>'], 'Copy selected" text or stop loading', function(){ var sel = window.content.window.getSelection().toString(); if (sel){ copyToClipboard(sel,true); } else { BrowserStop(); echo('Stopped Loading !'); } });
+mappings.addUserMap([modes.NORMAL,modes.VISUAL],['<C-z>'], 'Copy selected" text or stop loading', function(){ var sel = window.content.window.getSelection().toString(); if (sel){ copyToClipboard(sel,true); } else { BrowserStop(); echo('Stopped Loading !'); } });
 EOF
-
-" qmarks
-" ======================================================================
-qmark n https://172.16.226.1
-qmark r http://rs
-qmark w http://ng:8888
-qmark d https://nas
-
-qmark m https://mail.google.com/
-qmark c https://www.google.com/calendar/
-qmark f https://facebook.com
-qmark h http://www.github.com
-qmark b http://www.bitbucket.org
-
 
 " Remaps
 " ======================================================================
@@ -235,4 +221,19 @@ set! browser.fullscreen.autohide=false
 " :tr[anslate] [-l[angpair from|to] word or phrase
 let g:translate_langpair="en|de"
 
+com! yd js liberator.execute('silent !start youtube-dl --no-playlist '+buffer.URL)
+com! yw js liberator.execute('silent !start mpv --no-playlist '+buffer.URL)
+
+"runtimepath...
+"runtime...
+"
+":runt[ime][!] {file} …
+"Source the specified file from each directory in 'runtimepath'. Example:
+":runtime plugin/foobar.vimp
+"Only the first found file is sourced. When [!] is given, all found files are sourced.
+set runtimepath=~/.vimperator/config,~/.vimperator
+runtime ~/.vimperator/config/*.vimp
+
 loadplugins
+
+"nmap m ;m
