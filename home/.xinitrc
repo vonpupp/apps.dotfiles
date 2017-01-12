@@ -25,6 +25,9 @@ xrdb -merge ~/.Xresources
 # ALSA
 amixer set Master unmute
 
+# SYNAPSE
+#synapse -s
+
 
 # START THE WM
 case "$1" in
