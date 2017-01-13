@@ -9,11 +9,22 @@ homeshick link $REPO_NAME
 ln -s ~/Downloads ~/downloads
 
 # PIP (ROOT)
+if [ ! -d "~/.venv/bin2" ]; then
+    /usr/bin/virtualenv2 -q ~/.venv/bin2 --no-site-packages
+fi
+
+#if [ ! -f "$BASEDIR/ve/updated" -o $BASEDIR/requirements.pip -nt $BASEDIR/ve/updated ]; then
+#    pip install -r $BASEDIR/requirements.pip -E $BASEDIR/ve
+#    touch $BASEDIR/ve/updated
+#    echo "Requirements installed."
+#fi
+
 source ~/.venv/bin2/bin/activate
 pip install \
     trash \
     envdir \
     virtualenvwrapper \
+    mu-repo \
     #autoenv \
     #
 
@@ -31,11 +42,11 @@ git clone https://github.com/kennethreitz/autoenv ~/.autoenv
 sudo npm install -g gh
 
 ## FASD
-#git clone https://github.com/clvv/fasd.git
-#cd fasd
-#PREFIX=$HOME make install
-#cd ..
-#rm -rf fasd
+git clone https://github.com/clvv/fasd.git
+cd fasd
+PREFIX=$HOME make install
+cd ..
+rm -rf fasd
 
 # CREATE_AP
 git clone https://github.com/oblique/create_ap.git $HOME/bin/create_ap

@@ -1,13 +1,12 @@
 [Unit]
-Description=Dropbox as a systemd service
-#After=xorg.target
+Description=Dropbox
 
 [Service]
-User=%I
-Type=forking
-Environment=DISPLAY=:0
-ExecStart=/home/afu/bin/dropbox.py start
+Type=simple
+ExecStart=/usr/bin/dropbox
 ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
 
 [Install]
 WantedBy=default.target
