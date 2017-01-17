@@ -2,14 +2,23 @@
     name = vonpupp
     email = vonpupp@gmail.com
 [alias]
-    all = add --all .
-    au = add -u
-    cmsg = commit --amend -m
-    co = commit -m
-    ds = diff --staged
-    pb = pull --rebase
+    # Status
     s = status
+    # Log
     l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    # Add
+    au = add -u
+    all = add --all .
+    # Commit
+    co = commit -m
+    ca = commit --amend
+    cam = commit --amend -m
+    # Diff
+    ds = diff --staged
+    # Push
+    pf = push --force
+    # Others
+    pb = pull --rebase
     url =! bash -c 'git config --get remote.origin.url'
 [push]
     default = current

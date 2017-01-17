@@ -16,7 +16,9 @@ urxvt*borderLess:       false
 urxvt*internalBorder:   1
 urxvt*externalBorder:   0
 
-urxvt.font: xft:Terminus:size=12
+! Terminus got renamed, see:
+! Source: https://www.reddit.com/r/archlinux/comments/5nk6u2/xorg_119_no_longer_in_testing_pacman_syu_and_enjoy/dccdnhs/
+urxvt.font: xft:xos4 Terminus:size=12
 
 ! Source: https://github.com/muennich/urxvt-perls
 urxvt*perl-ext-common: default,matcher,searchable-scrollback,clipboard,keyboard-select,url-select,font-size
