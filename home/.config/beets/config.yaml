@@ -2,7 +2,8 @@
 # http://akeil.net/posts/music-with-mpd-and-beets.html
 # http://www.webupd8.org/2012/01/beets-command-line-tool-to-fix-music.html
 
-directory: /net/nas/audio            # The default library root directory.
+# The default library root directory.
+directory: /net/nas/audio/music/world/collection
 library: /net/nas/audio/library.db   # The default library database file to use.
 
 import:
