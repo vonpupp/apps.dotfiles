@@ -3,23 +3,20 @@
     email = vonpupp@gmail.com
 	signingkey = 4871A220
 [alias]
-    # Status
-    s = status
-    # Log
-    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-    # Add
     au = add -u
-    all = add --all .
-    # Commit
     co = commit -m
     ca = commit --amend
     cam = commit --amend -m
-    # Diff
+    df = diff
     ds = diff --staged
-    # Push
+    ss = status
+    ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    pl = pull
+    pr = pull --rebase
+    ps = push
     pf = push --force
+    bl = blame
     # Others
-    pb = pull --rebase
     url =! bash -c 'git config --get remote.origin.url'
 [push]
     default = current
