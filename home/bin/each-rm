@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BASENAME="$(basename "$PWD")"
+DIRNAME="$(dirname "$PWD")"
+THISDIR="$DIRNAME/$BASENAME/"
+PATTERN=$1
+
+if [ "$PATTERN" = "" ]; then
+    echo "Requires argument"
+else
+    find "$THISDIR" -name "$PATTERN" -exec rm -f {} \;
+fi;
