@@ -1,6 +1,6 @@
 [user]
     name = vonpupp
-    email = vonpupp@gmail.com
+    email = albert@haevas.com
 	signingkey = 4871A220
 [alias]
     au = add -u
@@ -43,7 +43,7 @@
     plain      = 240
     whitespace = 24 24
 [diff]
-    tool = vimdiff
+    tool = vimdiff3
 [difftool]
     prompt = false
 [credential]
