@@ -45,12 +45,18 @@ mpd_connection_timeout = "5"
 ## has to be set to 44100:16:1. Example configuration:
 ## (it has to be put into mpd.conf)
 ##
-audio_output {
-type "fifo"
- name "My FIFO"
- path "/tmp/mpd.fifo"
- format "44100:16:2"
- }
+#audio_output {
+#    #type            "fifo"
+#    #name            "My FIFO"
+#    #path            "/tmp/mpd.fifo"
+#    #format          "44100:16:2"
+#    type            "pulse"
+#    name            "pulse audio"
+#    device          "pulse"
+#    mixer_type      "software"
+#    #mixer_device    "default"
+#    #mixer_control   "PCM"
+#}
 ##
 #
 ##
