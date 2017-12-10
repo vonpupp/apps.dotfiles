@@ -60,6 +60,6 @@
 [credential]
 	helper = cache --timeout=3600
 [commit]
-    #gpgsign = true
+    gpgsign = true
 [gpg]
 	program = gpg
