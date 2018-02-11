@@ -14,7 +14,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # XAUTOLOCK
 xautolock -time 10 -locker ~/bin/start-locker.sh &
 # Using alock-git
-#xautolock -time 10 -locker "alock -bg blank -auth pam" &
+# xautolock -time 10 -locker "alock -bg blank -auth pam -bg shade:shade=30,blur=70" &
 xss-lock -- "$HOME/bin/start-locker.sh" &
 
 # XSCREENSAVER
@@ -27,9 +27,6 @@ xrdb -merge ~/.Xresources
 
 # ALSA
 amixer set Master unmute
-
-# SYNAPSE
-#synapse -s
 
 
 # START THE WM
