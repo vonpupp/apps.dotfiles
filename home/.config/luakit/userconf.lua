@@ -1,6 +1,8 @@
 local settings = require "settings"
 local modes = require "modes"
 
+-- Source:
+-- https://github.com/luakit/luakit/issues/624#issuecomment-366108170
 modes.add_binds("ex-follow", {
   -- Yank element uri to open in an external application
   { "d", "[[Hint all links (as defined by the `follow.selectors.uri` selector) and set the primary selection to the matched elements URI, so that an external app can open it]]",
