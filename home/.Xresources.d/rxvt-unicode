@@ -18,7 +18,12 @@ urxvt*externalBorder:   0
 
 ! Terminus got renamed, see:
 ! Source: https://www.reddit.com/r/archlinux/comments/5nk6u2/xorg_119_no_longer_in_testing_pacman_syu_and_enjoy/dccdnhs/
-urxvt.font: xft:xos4 Terminus:size=12
+! urxvt.font: xft:xos4 Terminus:size=12
+
+! "Fix": https://github.com/ryanoasis/nerd-fonts/issues/150#issuecomment-333877730
+urxvt.font: xft:FuraCode Nerd Font:style=Regular:pixelsize=12
+urxvt.boldFont: xft:FuraCode Nerd Font:style=Regular:pixelsize=12
+urxvt*letterSpace: -1
 
 ! Source: https://github.com/muennich/urxvt-perls
 urxvt*perl-ext-common: default,matcher,searchable-scrollback,clipboard,keyboard-select,url-select,font-size
