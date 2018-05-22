@@ -38,3 +38,28 @@ modes.add_binds("ex-follow", {
     })
   end },
 })
+
+
+-- Play Embedded Video in External Player.
+modes.add_binds("normal", {
+  { "V", "Play video in page",
+  function (w)
+    local view = w.view
+    local uri = view.hovered_uri or view.uri
+    if uri then
+      luakit.spawn(string.format("mpv --ytdl-format 'best[height=720]' '%s'", uri))
+    end
+  end },
+})
+
+-- Play Embedded Video in External Player
+modes.add_binds("normal", {
+  { "v", "Play video in page", function (w)
+  local view = w.view
+    local uri = view.hovered_uri or view.uri
+    if uri then
+      --luakit.spawn(string.format("mpv --geometry=640x360 %s", uri))
+      luakit.spawn(string.format("mpv '%s'", uri))
+    end
+  end },
+})
