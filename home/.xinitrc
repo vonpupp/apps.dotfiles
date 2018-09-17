@@ -28,6 +28,11 @@ xrdb -merge ~/.Xresources
 # ALSA
 amixer set Master unmute
 
+# Compton
+compton -bfzcCG --backend glx --vsync opengl-swc --paint-on-overlay -D5 -r6 -l-8 -t-8
+#compton -bfzCG --backend glx --vsync opengl-swc --paint-on-overlay -D5 -r6 -l-8 -t-8
+#xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
+
 
 # START THE WM
 case "$1" in
