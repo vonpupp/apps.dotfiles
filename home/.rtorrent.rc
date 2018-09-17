@@ -30,7 +30,7 @@ session = ~/downloads/torrents/.rtsession
 #schedule = watch_directory,5,5,load=~/downloads/torrents/watch/*.torrent
 #schedule = untied_directory,5,5,stop_untied=
 schedule = watch_directory_1,10,10,"load_start=~/downloads/torrents/watch/*.torrent,d.set_custom1=~/downloads/torrents/complete/"
-system.method.set_key = event.download.finished,move_complete,"d.set_directory=$d.get_custom1=;execute=mv,-u,$d.get_base_path=,~/downloads/torrents/complete/"
+#system.method.set_key = event.download.finished,move_complete,"d.set_directory=$d.get_custom1=;execute=mv,-u,$d.get_base_path=,~/downloads/torrents/complete/"
 #system.method.set_key=event.download.finished,move_complete,"d.set_directory=$d.get_custom1=;execute=mv,-u,$d.get_base_path=,~/downloads/torrents/incomplete/;d.set_directory=$d.get_custom1="
 
 ## This part has been taken from: https://wiki.archlinux.org/index.php/RTorrent
@@ -124,7 +124,7 @@ dht_port = 6881
 
 # Enable peer exchange (for torrents not marked private)
 #
-peer_exchange = yes
+#peer_exchange = yes
 
 #
 # Do not modify the following parameters unless you know what you're doing.
