@@ -44,7 +44,7 @@ case "$1" in
     e17) exec /usr/bin/enlightenment_start ;;
     pekwm) exec /usr/bin/pekwm ;;
     ratpoison) exec ratpoison ;;
-    awesome) exec awesome >> $HOME/.config/awesome/stdout.log 2>> $HOME/.config/awesome/stderr.log ;;
+    awesome) exec awesome > $HOME/.config/awesome/stdout.log 2> $HOME/.config/awesome/stderr.log ;;
     dwm) exec $HOME/bin/dwm_run ;;
     wmii) exec wmii ;;
 esac
