@@ -4,18 +4,22 @@
 # https://shapeshed.com/managing-packages-on-arch-linux/
 # https://bbs.archlinux.org/viewtopic.php?id=184002
 
-PAC_UPDATES=$(checkupdates | wc -l)
-KERNEL_UPDATES=$(checkupdates | pcregrep '^linux(-[^-\s]+)*(?<!-api)-headers$')
+AVAILABLE_UPDATES=$(checkupdates)
+PAC_UPDATES=$(echo "$AVAILABLE_UPDATES" | wc -l)
+KERNEL_UPDATES=$(echo "$AVAILABLE_UPDATES" | pcregrep '^linux ' | wc -l)
 #AUR_UPDATES=$(cower -u | wc -l)
 
-echo "Pacman available updates: $PAC_UPDATES"
-#echo "AUR available updates: $AUR_UPDATES"
+# Dirty solution for trailing CRLF when no updates, not such a big deal
+if [ "$PAC_UPDATES" -ge 2 ]; then
+    echo "PACMAN available updates: $PAC_UPDATES"
+fi
+if [ "$KERNEL_UPDATES" -ge 1 ]; then
+    echo "KERNEL available updates: $KERNEL_UPDATES"
+fi
+#if [ "$AUR_UPDATES" -ge 1 ]; then
+#    echo "   AUR available updates: $AUR_UPDATES"
+#fi
 
-#if [ "$PAC_UPDATES" -lt 20 ] && [ "$KERNEL_UPDATES" -eq 0 ]; then
-#    exit 0
-#if [ "$PAC_UPDATES" -ge 20 ] || [ "$KERNEL_UPDATES" -ge 1 ]; then
 if [ "$PAC_UPDATES" -ge 20 ]; then
-    echo "break"
-    #notify-send "Pending updates:" "$(checkupdates)";
-    #echo "PACKAGES: [ $PAC_UPDATES ]"
+    notify-send "Pending updates:" "$(echo "$AVAILABLE_UPDATES")";
 fi
