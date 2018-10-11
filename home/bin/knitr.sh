@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/usr/lib/R/library/knitr/bin/knit $1
+/usr/lib/R/library/knitr/bin/knit $@
