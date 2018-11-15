@@ -2,7 +2,7 @@
   "ui" : {
     "global" : {
       "ui-type" : "default",
-      "show-indicator": false
+      "show-indicator": true
     }
   },
   "data-sink" : {
