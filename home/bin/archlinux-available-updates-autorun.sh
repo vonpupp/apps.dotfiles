@@ -5,7 +5,6 @@
 # https://bbs.archlinux.org/viewtopic.php?id=184002
 
 RND=$(( ( RANDOM % 10 )  + 1 ))
-echo "RND=$RND"
 if [ "$RND" -le 3 ]; then
     AVAILABLE_UPDATES=$(checkupdates)
     PAC_UPDATES=$(echo "$AVAILABLE_UPDATES" | wc -l)
