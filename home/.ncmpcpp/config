@@ -315,7 +315,7 @@ centered_cursor = "no"
 #progressbar_look = "___"
 progressbar_look = "▉▉▉"
 #
-progressbar_boldness = "no"
+#progressbar_boldness = "no"
 #progressbar_elapsed_boldness = "no"
 #
 default_place_to_search_in = "database" (database/playlist)
@@ -486,7 +486,7 @@ main_window_color = "blue"
 #
 #color2 = "blue"
 #
-main_window_highlight_color = "white"
+#main_window_highlight_color = "white"
 #
 progressbar_color = "black"
 #
@@ -496,7 +496,7 @@ statusbar_color = "red"
 #
 alternative_ui_separator_color = "white"
 #
-active_column_color = "white"
+#active_column_color = "white"
 #
 visualizer_color = "white"
 #
