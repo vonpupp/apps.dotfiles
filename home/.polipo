@@ -1,3 +1,7 @@
-socksParentProxy = "localhost:6024"
+proxyAddress = "127.0.0.1"
+proxyPort = 8119
+socksParentProxy = "localhost:8118"
 socksProxyType = socks5
 diskCacheRoot = "~/tmp/.polipo-cache/"
+logFile = "~/tmp/.polipo-log"
+logLevel = 0xFF

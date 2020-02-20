@@ -5,7 +5,8 @@
 # https://bbs.archlinux.org/viewtopic.php?id=184002
 
 RND=$(( ( RANDOM % 10 )  + 1 ))
-if [ "$RND" -le 3 ]; then
+DOW=$(date +%u)
+if [ "$RND" -le 3 -a "$DOW" -le 1  ]; then
     AVAILABLE_UPDATES=$(checkupdates)
     PAC_UPDATES=$(echo "$AVAILABLE_UPDATES" | wc -l)
     KERNEL_UPDATES=$(echo "$AVAILABLE_UPDATES" | pcregrep '^linux ' | wc -l)
