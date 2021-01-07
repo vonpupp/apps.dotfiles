@@ -28,6 +28,9 @@ xrdb -merge ~/.Xresources
 # ALSA
 amixer set Master unmute
 
+# Xkbmap
+setxkbmap -layout eu
+
 # Compton
 compton -bfzcCG --backend glx --vsync opengl-swc --paint-on-overlay -D5 -r6 -l-8 -t-8
 #compton -bfzCG --backend glx --vsync opengl-swc --paint-on-overlay -D5 -r6 -l-8 -t-8
@@ -44,7 +47,7 @@ case "$1" in
     e17) exec /usr/bin/enlightenment_start ;;
     pekwm) exec /usr/bin/pekwm ;;
     ratpoison) exec ratpoison ;;
-    awesome) exec awesome > $HOME/.config/awesome/stdout.log 2> $HOME/.config/awesome/stderr.log ;;
+    awesome) exec dbus-launch awesome > $HOME/.config/awesome/stdout.log 2> $HOME/.config/awesome/stderr.log ;;
     dwm) exec $HOME/bin/dwm_run ;;
     wmii) exec wmii ;;
 esac
