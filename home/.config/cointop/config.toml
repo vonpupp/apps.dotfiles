@@ -1,7 +1,7 @@
 currency = "EUR"
-default_view = ""
+default_view = "default"
 api = "coingecko"
-colorscheme = ""
+colorscheme = "cointop"
 refresh_rate = 60
 cache_dir = "/tmp"
 
@@ -84,6 +84,7 @@ cache_dir = "/tmp"
   "}" = "last_chart_range"
 
 [favorites]
+  names = ["Bitcoin", "Ethereum", "XRP", "Litecoin", "Cardano", "Bitcoin Cash", "Monero"]
 
 [portfolio]
 
