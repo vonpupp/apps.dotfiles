@@ -10,9 +10,12 @@ echo "PWD $PWD"
 echo "BASENAME $BASENAME"
 
 youtube-dl \
-	--download-archive downloaded.txt \
-	--no-overwrites -ict \
-	--yes-playlist \
-	--extract-audio --audio-format mp3 --audio-quality 0 \
-	--socket-timeout 5 \
+    -i --extract-audio --audio-format mp3 --audio-quality 0 \
+    --batch-file="$PWD/urls.txt" --output "$PWD/%(title)s.%(ext)s" \
 	$@
+
+# --download-archive downloaded.txt \
+# --no-overwrites -ict \
+# --yes-playlist \
+# --extract-audio --audio-format mp3 --audio-quality 0 \
+# --socket-timeout 5 \

@@ -1,1 +1,0 @@
-mpv-scroll-list/scroll-list.lua

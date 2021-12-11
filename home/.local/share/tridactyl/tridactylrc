@@ -1,1 +1,75 @@
-bind cr js window.location.href = 'org-protocol:/roam-ref?template=r&ref=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title)
+" Examples:
+" https://github.com/simonhughcom/dot-gui/blob/72eb525a9d630809b85347e09e1bc1a4ff2744c1/browser/.config/tridactyl/tridactylrc
+" https://raw.githubusercontent.com/cmcaine/tridactyl/master/.tridactylrc
+
+" Testing
+bind ,a js window.location.href = 'alert("alert test .local")'
+
+" Color theme to use for menu
+colors dark
+
+" Org-protocol
+bind ,r js window.location.href = 'org-protocol:/roam-ref?template=r&ref=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title)
+bind ,l js window.location.href = 'org-protocol:/capture?template=L&url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title) + '&body='
+bind ,s js window.location.href = 'org-protocol:/capture?template=L&url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title) + '&body='
+
+bind ,g js let uri = document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git"); tri.native.run("cd ~/repos; git clone " + uri + "; cd \"$(basename \"" + uri + "\" .git)\"; st")
+
+" Git{Hub,Lab} git clone via SSH yank
+bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
+
+" Play video with mpv
+alias ytdl js -p tri.excmds.shellescape(JS_ARG).then(url => tri.excmds.exclaim_quiet('youtube-dl --notify --video --url=' + url))
+alias ytdl_pl js -p tri.excmds.shellescape(JS_ARG).then(url => tri.excmds.exclaim_quiet('youtube-dl --notify --playlist --url=' + url))
+" See: https://www.reddit.com/r/archlinux/comments/5m2os3/mpv_is_it_possible_to_change_video_quality_while/
+alias mpv js -p tri.excmds.shellescape(JS_ARG).then(url => tri.excmds.exclaim_quiet('mpv --ytdl-format=\'bestvideo[height<=480]+bestaudio\' ' + url))
+unbind v
+unbind V
+" On current URL
+bind V composite get_current_url | mpv
+" Using hint
+bind v hint -JW mpv
+" On youtube
+bindurl youtube.com v composite hint -Jpipe ytd-thumbnail>a href | mpv
+"bind zv composite js document.location.href | exclaim_quiet mpv --loop
+
+" CONTAINERS
+containercreate google yellow fingerprint
+autocontain -s google\.(co\.uk|com|.com.br) google
+autocontain -s youtube\.com google
+
+containercreate facebook blue fingerprint
+autocontain -s facebook\.com facebook
+
+containercreate twitter blue fingerprint
+autocontain -s twitter\.com twitter
+
+containercreate yahoo purple fingerprint
+autocontain -s yahoo\.(co\.uk|com|net) yahoo
+
+containercreate reddit pink fingerprint
+autocontain -s reddit\.com reddit
+
+containercreate outlook turquiose fingerprint
+autocontain -s live\.com outlook
+
+containercreate amazon orange cart
+autocontain -s amazon\.(co\.uk|com) amazon
+
+containercreate ebay yellow cart
+autocontain -s ebay\.(co\.uk|com) ebay
+
+containercreate github purple circle
+autocontain -s github\.com github
+
+containercreate gitlab purple circle
+autocontain -s gitlab\.com gitlab
+
+containercreate namecheap orange briefcase
+autocontain -s namecheap\.com namecheap
+
+containercreate protonmail turquiose fingerprint
+autocontain -s protonmail\.com protonmail
+
+containercreate skype turquiose fingerprint
+autocontain -s skype\.com skype
