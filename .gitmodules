@@ -7,3 +7,12 @@
 [submodule "home/.config/mpv/scripts/mpv-repl"]
 	path = home/.config/mpv/scripts/mpv-repl
 	url = https://github.com/rossy/mpv-repl.git
+[submodule "home/.config/mpv/scripts/mpv-search-page"]
+	path = home/.config/mpv/scripts/mpv-search-page
+	url = https://github.com/CogentRedTester/mpv-search-page.git
+[submodule "home/.config/mpv/scripts/mpv-user-input"]
+	path = home/.config/mpv/scripts/mpv-user-input
+	url = https://github.com/CogentRedTester/mpv-user-input.git
+[submodule "home/.config/mpv/scripts/mpv-scroll-list"]
+	path = home/.config/mpv/scripts/mpv-scroll-list
+	url = https://github.com/CogentRedTester/mpv-scroll-list.git
