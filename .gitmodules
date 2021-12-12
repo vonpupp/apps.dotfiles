@@ -16,3 +16,6 @@
 [submodule "home/.config/mpv/scripts/mpv-scroll-list"]
 	path = home/.config/mpv/scripts/mpv-scroll-list
 	url = https://github.com/CogentRedTester/mpv-scroll-list.git
+[submodule "home/.config/mpv/scripts/interSubs"]
+	path = home/.config/mpv/scripts/interSubs
+	url = https://github.com/oltodosel/interSubs.git
