@@ -29,7 +29,9 @@ xrdb -merge ~/.Xresources
 amixer set Master unmute
 
 # Xkbmap
-setxkbmap -layout eu
+# Hold Right Shift + Control to cycle kbmap
+setxkbmap -layout "eu,il,il" -variant ",biblicalSIL,biblical" -option -option "lv3:ralt_switch,grp:rctrl_rshift_toggle"
+# setxkbmap -layout "eu,il,il,il" -variant ",biblicalSIL,biblical,phonetic" -option "grp:rctrl_rshift_toggle"
 
 # Compton
 #compton -bfzcCG --backend glx --vsync opengl-swc --paint-on-overlay -D5 -r6 -l-8 -t-8

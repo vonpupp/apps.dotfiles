@@ -22,7 +22,7 @@ bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//
 alias ytdl js -p tri.excmds.shellescape(JS_ARG).then(url => tri.excmds.exclaim_quiet('youtube-dl --notify --video --url=' + url))
 alias ytdl_pl js -p tri.excmds.shellescape(JS_ARG).then(url => tri.excmds.exclaim_quiet('youtube-dl --notify --playlist --url=' + url))
 " See: https://www.reddit.com/r/archlinux/comments/5m2os3/mpv_is_it_possible_to_change_video_quality_while/
-alias mpv js -p tri.excmds.shellescape(JS_ARG).then(url => tri.excmds.exclaim_quiet('mpv --ytdl-format=\'bestvideo[height<=480]+bestaudio\' ' + url))
+alias mpv js -p tri.excmds.shellescape(JS_ARG).then(url => tri.excmds.exclaim_quiet('mpv --ytdl-format=\'bestvideo[height<=480]+bestaudio/best[height<=480]/mp4\' ' + url))
 unbind v
 unbind V
 " On current URL
